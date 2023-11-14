@@ -22,3 +22,11 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+I aim to implement the Hexagonal and EBI patterns.
+
+Tools to add:
+Sorbet and RBS: Type checking
+Ruby LSP and Solargraph: Intellisense
+Packwerk: Enforce boundaries in modules
+Rubocop: Prevent modules from using Rails specific features.
