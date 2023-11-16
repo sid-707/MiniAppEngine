@@ -4,7 +4,7 @@ module Modules
 
         def initialize(module_name)
             @module_name = module_name
-            @base_path = "app/modules/#{to_underscore(module_name)}"
+            @base_path = "lib/modules/#{to_underscore(module_name)}"
         end
 
         def create_module_structure

@@ -5,7 +5,7 @@ class ModuleGeneratorTest < Minitest::Test
   def setup
     @module_name = 'TestModule'
     @generator = Modules::ModuleGenerator.new(@module_name)
-    @base_path = "app/modules/test_module"
+    @base_path = "lib/modules/test_module"
   end
 
   def test_create_module_structure_when_module_does_not_exist
