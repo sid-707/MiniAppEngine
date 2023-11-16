@@ -34,16 +34,15 @@ Rubocop: Prevent modules from using Rails specific features.
 Lessons Learned and Design Decisions:
 You can generate generators with `Rails generate generator <name_of_generator>`
 
-`bin/rails test` runs `MiniTest`. `MiniTest` doesn't have good support for mocking and stubbing. You can add `mocha/minitest` for that [[source](https://semaphoreci.com/community/tutorials/mocking-in-ruby-with-minitest)]
-Thus, `rspec-rails` was added to the project since it has better support for mocking and stubbing.
-However, RSpec does not support testing file system operations so regular Ruby methods were used for this purpose (eg. `spec/generator/module_generator_spec.rb`).
+`bin/rails test` runs `MiniTest`. `MiniTest` doesn't have good support for mocking and stubbing. I added `mocha` for that [[source](https://semaphoreci.com/community/tutorials/mocking-in-ruby-with-minitest)]
+
 
 
 I've added a Rails generator called `ModuleGenerator` to generate all the files for a module. However, I've extracted the business logic in and put it in `Modules::ModuleGenerator` in order to make it independent which is a goal of this project. This module generator should be able to run in any Ruby environment.
 
-RSpec does not recognize `Rails::Generators`. Looks like it does not support testing generators. Therefore, MiniTest is used to test the generators.
-
 It was difficult to test for `say_status` in the tests with Minitest so that method was stubbed.
 
+In order to use `Minitest::Mock` in tests, you have to add `require "minitest/autorun"` to the `test_helper.rb` file.
 
+To run Ruby tests inside the `lib/modules` folder, use `ruby -Itest <path to file>`
 
