@@ -15,7 +15,8 @@ class ModuleGeneratorTest < Minitest::Test
 
     @generator.create_module_structure
 
-    expected_directories = [@base_path] + %w[entities interactors boundaries repositories].map { |subdir| "#{@base_path}/#{subdir}" }
+    expected_directories = [@base_path] + %w[entities interactors boundaries].map { |subdir| "#{@base_path}/#{subdir}" } + ["#{@base_path}/boundaries/repositories"]
+
     assert_equal expected_directories.sort, mkdir_calls.sort
 
     # Clean up by removing the singleton method after the test

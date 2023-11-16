@@ -20,9 +20,11 @@ module Modules
         def create_directory_structure(base_path)
             create_directory(base_path)
         
-            ['entities', 'interactors', 'boundaries', 'repositories'].each do |subdir|
+            ['entities', 'interactors', 'boundaries'].each do |subdir|
                 create_directory(File.join(base_path, subdir))
             end
+
+            create_directory(File.join(base_path, 'boundaries', 'repositories'))
         end
 
         def create_directory(path)
