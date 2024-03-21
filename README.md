@@ -1,4 +1,6 @@
-# MiniAppEngine: A simple Google App Engine clone.
+# MiniAppEngine: A simple Google App Engine clone
+
+[Background](https://sid707.hashnode.dev/miniappengine-building-a-paas-from-scratch)
 
 This is a learning exercise to understand fundamentals of OS, networking, containerization, orchestration, and modularity.
 
@@ -8,8 +10,8 @@ Features:
 3) Automatic scaling to 2 instances
 
 Limitations:
-    - It only supports running Python applications
-    - It does not support versioning and multiple instances of an app.
+   - It only supports running Python applications
+   - It does not support versioning and multiple instances of an app.
 
 There are 3 components:
 - CLI app written in Typescript
