@@ -18,7 +18,7 @@ There are 3 components:
 - Web API and UI written in Ruby on Rails
 - Control Plane written in Elixir
 
-Later the control plane will be replaced with Kubernetes. The reason I am building this in Elixir first is to
+Later the control plane will be replaced with Kubernetes. The reason I am building this in Elixir first is to:
 1) learn how orchestration works. 
 2) take advantage of Elixir's strengths and see how it is to build a project with it.
 
